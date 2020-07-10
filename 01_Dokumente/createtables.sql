@@ -1,0 +1,94 @@
+CREATE DATABASE qv_calculator;
+
+CREATE TABLE student (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Firstname VARCHAR(32) NOT NULL,
+	Lastname VARCHAR(32)  NOT NULL,
+    email VARCHAR(64) NOT NULL,
+	fk_Semester BIGINT NOT NULL,
+	fk_IPA BIGINT NOT NULL,
+	fk_UEK BIGINT NOT NULL
+);
+
+  CREATE TABLE IPA (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Mark double NOT NULL 
+);         
+
+CREATE TABLE Semester (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	fk_Semester1 BIGINT NOT NULL,
+    fk_Semester2 BIGINT NOT NULL,
+    fk_Semester3 BIGINT NOT NULL,
+    fk_Semester4 BIGINT NOT NULL,
+    fk_Semester5 BIGINT NOT NULL,
+    fk_Semester6 BIGINT NOT NULL,
+    fk_Semester7 BIGINT NOT NULL,
+    fk_Semester8 BIGINT NOT NULL
+);
+
+CREATE TABLE Semester1 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester2 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester3 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester4 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester5 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester6 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester7 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE Semester8 (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	AvgMarkABU double,
+    Mark_eFK double
+);
+
+CREATE TABLE TBZModule (
+	ModulName int PRIMARY KEY,
+	Mark double
+);
+
+CREATE TABLE UEK (
+	UEKName int PRIMARY KEY,
+	Mark double
+);
+
+CREATE TABLE eFK (
+	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	EnglishMark double,
+    NWMark double,
+    MathMark double
+);
+
