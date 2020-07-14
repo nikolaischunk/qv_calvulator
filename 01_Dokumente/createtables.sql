@@ -5,90 +5,37 @@ CREATE TABLE student (
 	Firstname VARCHAR(32) NOT NULL,
 	Lastname VARCHAR(32)  NOT NULL,
     email VARCHAR(64) NOT NULL,
-	fk_Semester BIGINT NOT NULL,
-	fk_IPA BIGINT NOT NULL,
-	fk_UEK BIGINT NOT NULL
+	wunschnote DOUBLE NOT NULL
 );
 
-  CREATE TABLE IPA (
+CREATE TABLE IPA (
 	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	Mark double NOT NULL 
-);         
+	Note double
+);
 
 CREATE TABLE Semester (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	fk_Semester1 BIGINT NOT NULL,
-    fk_Semester2 BIGINT NOT NULL,
-    fk_Semester3 BIGINT NOT NULL,
-    fk_Semester4 BIGINT NOT NULL,
-    fk_Semester5 BIGINT NOT NULL,
-    fk_Semester6 BIGINT NOT NULL,
-    fk_Semester7 BIGINT NOT NULL,
-    fk_Semester8 BIGINT NOT NULL
+ID BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+ABU double,
+erwGrundKompetenzen double
 );
 
-CREATE TABLE Semester1 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester2 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester3 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester4 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester5 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester6 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester7 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE Semester8 (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	AvgMarkABU double,
-    Mark_eFK double
-);
-
-CREATE TABLE TBZModule (
+CREATE TABLE Modul (
 	ModulName int PRIMARY KEY,
-	Mark double
+	Note double
 );
 
 CREATE TABLE UEK (
 	UEKName int PRIMARY KEY,
-	Mark double
+	Note double
 );
 
-CREATE TABLE eFK (
-	ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	EnglishMark double,
-    NWMark double,
-    MathMark double
+CREATE TABLE eGK (
+	Semester BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	EnglischNote double,
+    NaturWissenschaftNote double,
+    MatheNote double
 );
 
+CREATE TABLE Informatikkompetenz (
+	
+)
