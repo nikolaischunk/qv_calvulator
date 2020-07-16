@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `eFK` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `EnglishMark` double DEFAULT NULL,
   `NWMark` double DEFAULT NULL,
   `MathMark` double DEFAULT NULL
@@ -41,7 +41,7 @@ CREATE TABLE `eFK` (
 --
 
 CREATE TABLE `IPA` (
-  `Id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `Mark` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -52,7 +52,7 @@ CREATE TABLE `IPA` (
 --
 
 CREATE TABLE `Semester` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `fk_Semester1` bigint(20) NOT NULL,
   `fk_Semester2` bigint(20) NOT NULL,
   `fk_Semester3` bigint(20) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `Semester` (
 --
 
 CREATE TABLE `Semester1` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -82,7 +82,7 @@ CREATE TABLE `Semester1` (
 --
 
 CREATE TABLE `Semester2` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -94,7 +94,7 @@ CREATE TABLE `Semester2` (
 --
 
 CREATE TABLE `Semester3` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -106,7 +106,7 @@ CREATE TABLE `Semester3` (
 --
 
 CREATE TABLE `Semester4` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -118,7 +118,7 @@ CREATE TABLE `Semester4` (
 --
 
 CREATE TABLE `Semester5` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -130,7 +130,7 @@ CREATE TABLE `Semester5` (
 --
 
 CREATE TABLE `Semester6` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -142,7 +142,7 @@ CREATE TABLE `Semester6` (
 --
 
 CREATE TABLE `Semester7` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -154,7 +154,7 @@ CREATE TABLE `Semester7` (
 --
 
 CREATE TABLE `Semester8` (
-  `ID` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `AvgMarkABU` double DEFAULT NULL,
   `Mark_eFK` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -166,7 +166,7 @@ CREATE TABLE `Semester8` (
 --
 
 CREATE TABLE `student` (
-  `Id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `Firstname` varchar(32) NOT NULL,
   `Lastname` varchar(32) NOT NULL,
   `email` varchar(64) NOT NULL,
@@ -205,73 +205,73 @@ CREATE TABLE `UEK` (
 -- Indexes for table `eFK`
 --
 ALTER TABLE `eFK`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `IPA`
 --
 ALTER TABLE `IPA`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester`
 --
 ALTER TABLE `Semester`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester1`
 --
 ALTER TABLE `Semester1`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester2`
 --
 ALTER TABLE `Semester2`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester3`
 --
 ALTER TABLE `Semester3`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester4`
 --
 ALTER TABLE `Semester4`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester5`
 --
 ALTER TABLE `Semester5`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester6`
 --
 ALTER TABLE `Semester6`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester7`
 --
 ALTER TABLE `Semester7`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Semester8`
 --
 ALTER TABLE `Semester8`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `TBZModule`
@@ -293,73 +293,73 @@ ALTER TABLE `UEK`
 -- AUTO_INCREMENT for table `eFK`
 --
 ALTER TABLE `eFK`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `IPA`
 --
 ALTER TABLE `IPA`
-  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester`
 --
 ALTER TABLE `Semester`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester1`
 --
 ALTER TABLE `Semester1`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester2`
 --
 ALTER TABLE `Semester2`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester3`
 --
 ALTER TABLE `Semester3`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester4`
 --
 ALTER TABLE `Semester4`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester5`
 --
 ALTER TABLE `Semester5`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester6`
 --
 ALTER TABLE `Semester6`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester7`
 --
 ALTER TABLE `Semester7`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Semester8`
 --
 ALTER TABLE `Semester8`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
