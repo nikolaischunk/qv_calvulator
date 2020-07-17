@@ -38,10 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt,
             "sssdd",
             $firstname,
-        $lastname,
-        $email,
-        $wunschnote,
-        $benötigtenote
+            $lastname,
+            $email,
+            $wunschnote,
+            $benötigtenote
         );
         if (mysqli_stmt_execute($stmt)) {
             $id = mysqli_insert_id($conn);
@@ -51,13 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $protocol = 'http';
             }
-            header("LOCATION: $protocol://" . $_SERVER['HTTP_HOST'] . "/www/UEK/overview.php"); //"/www/form_exercise/person.php?id=$id");
+            header("LOCATION: $protocol://" . $_SERVER['HTTP_HOST'] . "/www/");
             exit;
         } else {
             echo mysqli_stmt_error($stmt);
         }
         $conn->close();
     }
-
-
 }
+
+?>
