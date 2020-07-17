@@ -36,15 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         mysqli_stmt_bind_param(
             $stmt,
-            "ssisssss",
-            $objname,
-            $objdesc,
-            $preis,
-            $kaufdatum,
-            $ablaufdatum,
-            $invnummer,
-            $objtyp,
-            $ort
+            "sssdd",
+            $firstname,
+        $lastname,
+        $email,
+        $wunschnote,
+        $benötigtenote
         );
         if (mysqli_stmt_execute($stmt)) {
             $id = mysqli_insert_id($conn);
