@@ -1,10 +1,7 @@
 /*CREATE DATABASE qv_calculator;*/
 
 CREATE TABLE student (
-	student_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	firstname VARCHAR(32) NOT NULL,
-	lastname VARCHAR(32)  NOT NULL,
-    email VARCHAR(64) NOT NULL,
+	student_id int PRIMARY KEY,
 	wunschnote DOUBLE NOT NULL,
 	benötigtenote DOUBLE NOT NULL
 );
