@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div>
             <input placeholder="Wunschnote" type="number" id="wunschnote" name="wunschnote" required="required" min="1"
                    max="6" step="0.1" value="4.0"
-                   value="<?= htmlspecialchars($wunschnote) ?> class=" form-control rounded-pill form-control-lg">
+                   value="<?= htmlspecialchars($wunschnote) ?>" class="form-control rounded-pill form-control-lg">
         </div>
         <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Absenden</button>
 
