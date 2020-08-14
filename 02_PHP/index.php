@@ -1,63 +1,73 @@
 <?php
 
+$id = 2;
+$wunschnote = '';
+$benötigtenote = 4;
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    require './db_connect.php';
+
+// ======================================
+    $wunschnote = isset($_POST['wunschnote']) ? $_POST['wunschnote'] : '';
+
+
+    if ($wunschnote) {
+        echo 'data is valid';
+    } else {
+        echo "ERROR WITH DATA";
+    }
+
+    //========================================
+    var_dump($_POST);
+
+    $sql = "UPDATE student SET wunschnote = ? WHERE student.student_id = '1'";
+    $stmt = mysqli_prepare($conn, $sql);
+    if (false === $stmt) {
+        echo mysqli_error($conn);
+    } else {
+        mysqli_stmt_bind_param(
+            $stmt,
+            "d",
+            $wunschnote
+        );
+        if (mysqli_stmt_execute($stmt)) {
+            $id = mysqli_insert_id($conn);
+            echo "Inserted record with id: $id";
+            if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+                $protocol = 'https';
+            } else {
+                $protocol = 'http';
+            }
+            header("LOCATION: $protocol://" . $_SERVER['HTTP_HOST'] . "/www/qv_calvulator/02_PHP/form.php");
+            exit;
+        } else {
+            echo mysqli_stmt_error($stmt);
+        }
+        $conn->close();
+    }
+
+}
 ?>
+
 <?php require './header.php'; ?>
 
-<div class="album py-5 bg-light">
-    <div class="container">
 
-        <div class="row">
-
-
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    <div class="card-body">
-                        <input placeholder="Nutzername" type="text" id="username" name="username" required="required" maxlength="64"
-                               minlength="4" class="form-control rounded-pill form-control-lg"
-                               placeholder="Email">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+<div class="d-flex justify-content-center align-items-center login-container">
+    <form method="post" class="login-form text-center">
+        <h1 class="mb-5 font-weight-light text-uppercase noselect">Wunschnote</h1>
+        <div>
+            <input placeholder="Wunschnote" type="number" id="wunschnote" name="wunschnote" required="required" min="1"
+                   max="6" step="0.1" value="4.0"
+                   value="<?= htmlspecialchars($wunschnote) ?>" class="form-control rounded-pill form-control-lg">
         </div>
-    </div>
+        <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Absenden</button>
+
+    </form>
 </div>
+
+
+</form>
 
 
 <?php require './footer.php'; ?>
