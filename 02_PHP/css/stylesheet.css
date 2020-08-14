@@ -61,5 +61,11 @@ footer p {
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
+.btn.focus,
+.btn:focus {
+    outline:0;
+    box-shadow:0 0 0 .0rem transparent;
+}
+
 
 /*=========================================INDEX=====================================================================*/
